@@ -41,6 +41,18 @@ class UnitConv:
         else:
             raise QuatityCustomException('incorrect length')
 
+    def __eq__(self, other):
+        if other.length is None:
+            raise QuatityCustomException('Null')
+        elif other.length != self.length:
+            raise QuatityCustomException('References are not Equal')
+        elif type(other.length) != (self.length):
+            raise QuatityCustomException('Type Not Equal')
+        elif other.length > 0:
+            return other.length * 12
+        else:
+            raise QuatityCustomException('Length is Invalid')
+
 
 
 
